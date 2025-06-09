@@ -1,0 +1,24 @@
+﻿@using ItchIoTemplates.ExportApp.Consts
+@model ItchIoTemplates.ExportApp.Models.BallmenDevLogModel
+
+@if (Model.WhatIsNewEntries.Any())
+{
+    <h1 style="color: @BallmenStyleConst.RedColor">What is new?</h1>
+
+    @foreach (var entry in Model.WhatIsNewEntries)
+    {
+        <h3>@entry.Title</h3>
+        <h3>@entry.Description</h3>
+    }
+}
+
+@if (Model.WhatIsFixedEntries.Any())
+{
+    <h1 style="color: @BallmenStyleConst.RedColor">What is fixed?</h1>
+
+    @foreach (var entry in Model.WhatIsFixedEntries)
+    {
+        <h3>@entry.Title</h3>
+        <h3>@entry.Description</h3>
+    }
+}

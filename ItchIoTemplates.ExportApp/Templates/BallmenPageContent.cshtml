@@ -1,0 +1,95 @@
+﻿@using ItchIoTemplates.ExportApp.Consts
+@model ItchIoTemplates.ExportApp.Models.BallmenPageContentModel
+
+<img src="@BallmenImagesPath.WhatIsGoalIcon" alt="What is goal icon">
+
+<h1>What is the goal:</h1>
+<p>Your goal is to kick the opponent's players into their basket to score points.</p>
+<p>The one who has the most score by the end of the game wins.</p>
+<p>Game will end when timer is up or when any team gain 5 score.</p>
+<br>
+
+<img src="@BallmenImagesPath.GameMechanicsIcon" alt="Game mechanics icon">
+
+<h1>About game mechanics:</h1>
+<p>
+    Charge - Indicates how long can you control player. When this value went 0, you can't control player for a while.
+</p>
+<p>
+    Carrots - Every successful attack on an opponent's player will cause them to lose some charge and spawn carrots.
+    You can collect your team's colored carrots to gain some charge
+</p>
+<p>
+    Team area - You can gain charge by standing in your team area.
+    After standing ~2 seconds in your team area, you will constantly gain charge
+</p>
+<br>
+
+<img src="@BallmenImagesPath.HowToCreateJoinIcon" alt="How to join icon">
+
+<h1>How to create/join game:</h1>
+<ul>
+    <li>
+        To create game lobby, you need to simply press <strong>Play</strong>.
+        If you want your friends be able to connect your lobby,
+        press <strong>Copy join button</strong>, then send code from clipboard to your friends.
+    </li>
+    <li>
+        To join game lobby, you need to press <strong>Join</strong>, then enter join code in input
+        (which host should send, in create lobby steps).
+        Since join code entered, press <strong>Join</strong> in modal to connect host's game lobby.
+    </li>
+</ul>
+<br>
+
+<img src="@BallmenImagesPath.InputIcon" alt="Input icon">
+
+<h1>Input:</h1>
+
+<h3>Keyboard</h3>
+<ul>
+    <li>Move - <strong>A, D, 🠔, 🠖</strong></li>
+    <li>Jump - <strong>Space</strong></li>
+    <li>Attack - <strong>J</strong></li>
+    <li>Dodge - <strong>L</strong></li>
+</ul>
+
+<h3>Gamepad</h3>
+<ul>
+    <li>Move - <strong>Left Stick, D-Pad</strong></li>
+    <li>Jump - <strong>Button South</strong></li>
+    <li>Attack - <strong>Button West</strong></li>
+    <li>Dodge - <strong>Button East<br></strong></li>
+</ul>
+<br>
+
+<img src="@BallmenImagesPath.AboutBetaIcon" alt="About beta icon">
+
+<h1>About beta:</h1>
+<p>The game isn't completed yet, current version (v@(Model.CurrentVersion)) contains only main game modes and mechanics.</p>
+<p>There will be changes near time, you can see <strong>Near features</strong> section with a part of the next game updates features.</p>
+<br>
+
+<img src="@BallmenImagesPath.NearFeaturesIcon" alt="Near features icon">
+
+<h1>Near features:</h1>
+
+@foreach (var entry in Model.NearFeatureEntries)
+{
+    <h3>@entry.Title</h3>
+    <p>@entry.Description</p>
+}
+
+<img src="@BallmenImagesPath.CompletedFeaturesIcon" alt="Completed features icon">
+
+<h1>Completed features (since 1.0.0):</h1>
+
+@foreach (var entry in Model.CompletedFeatureEntries)
+{
+    <h3>@entry.Title</h3>
+    <p>@entry.Description</p>
+}
+
+<p class="text-center">
+    <img src="@BallmenImagesPath.FallingBallman" alt="Falling ballman">
+</p>

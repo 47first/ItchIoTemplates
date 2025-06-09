@@ -2,7 +2,7 @@
 
 public struct TemplateExportParams
 {
-    public object Model { get; set; }
+    public required object Model { get; init; }
 
-    public string PathToSave { get; set; }
+    public required string PathToSave { get; init; }
 }
