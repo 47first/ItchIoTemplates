@@ -15,10 +15,33 @@ builder.Services.AddRazorLight(() => new RazorLightEngineBuilder()
 
 builder.AddExport(new TemplateExportParams
 {
+
     Model = new BallmenDevLogModel
     {
-        WhatIsNewEntries = [],
-        WhatIsFixedEntries = []
+        WhatIsNewEntries =
+        [
+            new()
+            {
+                Title = "Menu View Update",
+                Description = "Beautified and stylized menu visual."
+            },
+            new()
+            {
+                Title = "Lobby Major Update",
+                Description = "Currently you can only gain players and launch game in online mode."
+                    + " Next lobby update will contain game settings and full offline mode."
+            },
+            new()
+            {
+                Title = "Adaptive network model",
+                Description = "Game logic will adapt to your current network state."
+                    + " For example, if you enter to lobby, you'll be in offline mode by default,"
+                    + " but if you press 'Copy join code', network connection will be created."
+            }
+        ],
+        WhatIsFixedEntries =
+        [
+        ]
     },
     PathToSave = "devLogs.html"
 });
@@ -32,13 +55,13 @@ builder.AddExport(new TemplateExportParams
         [
             new()
             {
-                Title = "Menu View Update",
-                Description = "Beautified and stylized menu visual."
+                Title = "Updated player view",
+                Description = "Updated player animations, shaders"
             },
             new()
             {
-                Title = "Lobby Major Update",
-                Description = "Currently you can only gain players and launch game in online mode. Next lobby update will contain game settings and full offline mode."
+                Title = "New skills",
+                Description = "Bat, blood and naked guns"
             },
             new()
             {
@@ -48,6 +71,17 @@ builder.AddExport(new TemplateExportParams
         ],
         CompletedFeatureEntries =
         [
+            new()
+            {
+                Title = "Menu View Update",
+                Description = "Beautified and stylized menu visual."
+            },
+            new()
+            {
+                Title = "Lobby Major Update",
+                Description = "Currently you can only gain players and launch game in online mode."
+                    + " Next lobby update will contain game settings and full offline mode."
+            },
             new()
             {
                 Title = "Bots",
@@ -61,12 +95,14 @@ builder.AddExport(new TemplateExportParams
             new()
             {
                 Title = "Relay support",
-                Description = "There will be no need to install virtual LAN solutions like Radmin. You can establish connection out of box"
+                Description = "There will be no need to install virtual LAN solutions like Radmin."
+                    + " You can establish connection out of box"
             },
             new()
             {
                 Title = "Lives",
-                Description = "Every round you will have 3 lives. Every fall out of bounds will take one live. When any team lost their all lives, the opponent team will get score and round changes."
+                Description = "Every round you will have 3 lives. Every fall out of bounds will take one live."
+                    + " When any team lost their all lives, the opponent team will get score and round changes."
             }
         ]
     },
